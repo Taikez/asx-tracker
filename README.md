@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ASX Tracker
 
-## Getting Started
+A modern web application for tracking and analyzing Australian Stock Exchange (ASX) listed companies, featuring sortable listings, financial KPIs, and interactive charts.
 
-First, run the development server:
+Built with a clean, scalable architecture and designed to integrate real financial data pipelines.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🔍 Search companies by code or name
+- 🏭 Filter companies by industry
+- ↕️ Sort by price, market cap, and financial metrics
+- 📊 Interactive charts for price, revenue, and profit trends
+- 🧮 Key financial ratios & KPIs
+- 📄 Detailed company profile pages
+- ⚡ Fast, responsive UI with modern UX
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧱 Architecture Overview
 
-To learn more about Next.js, take a look at the following resources:
+This project is split into two main layers:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Frontend (Web App)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Displays company listings and detail pages
+- Handles filtering, sorting, pagination, and visualization
 
-## Deploy on Vercel
+### Data Pipeline (Backend / ETL)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Python scripts fetch and process ASX financial data
+- Data is normalized and stored in Google Sheets
+- Frontend consumes data from Google Sheets (API / export)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This separation allows:
+
+- Easy data updates without redeploying frontend
+- Future migration to a database or API service
+- Rapid prototyping with real market data
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- **Next.js (App Router)**
+- **TypeScript**
+- **Tailwind CSS**
+- **Recharts**
+- **React Hooks**
+
+### Data Pipeline
+
+- **Python**
+- **Google Sheets API**
+- **Pandas**
+- **Scheduled data updates (cron / GitHub Actions ready)**
+
+---
